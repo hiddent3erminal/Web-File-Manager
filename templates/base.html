@@ -4,24 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web File Manager</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <header>
-        <h1>Welcome to Web File Manager</h1>
-        <nav>
-            <a href="{{ url_for('home') }}">Home</a>
-            <a href="{{ url_for('upload') }}">Upload Files</a>
-            <a href="{{ url_for('logout') }}">Logout</a>
-        </nav>
+        <h1>Web File Manager</h1>
     </header>
-
     <main>
         {% block content %}{% endblock %}
     </main>
-
     <footer>
-        <p>&copy; 2025 Web File Manager Project</p>
+        <p>&copy; 2025 Web File Manager</p>
     </footer>
 </body>
 </html>
+
+<script>
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+@app.route('/upload', methods=['GET', 'POST'])
+def upload():
+    if request.method == 'POST':
+        if 'file' not in request.files:
+            logger.warning('No file part in the request')
+            flash('No file part')
+            return redirect(request.url)
+        file = request.files['file']
+        if file.filename == '':
+            logger.warning('No selected file')
+            flash('No selected file')
+            return redirect(request.url)
+        if file:
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            logger.info(f'File uploaded: {filename}')
+            flash('File successfully uploaded')
+            return redirect(url_for('home'))
+    return render_template('upload.html')
+</script>

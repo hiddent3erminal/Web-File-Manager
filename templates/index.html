@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>File List</h2>
+<h2>Uploaded Files</h2>
 <ul>
     {% for file in files %}
-        <li><a href="{{ url_for('download', filename=file) }}">{{ file }}</a></li>
+    <li>
+        <a href="{{ url_for('download', filename=file) }}">{{ file }}</a>
+    </li>
+    {% else %}
+    <li>No files uploaded yet.</li>
     {% endfor %}
 </ul>
+<a href="{{ url_for('upload') }}">Upload a new file</a>
 {% endblock %}
