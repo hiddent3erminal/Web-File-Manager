@@ -1,0 +1,28 @@
+<table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size (KB)</th>
+            <th>Upload Date</th>
+            <th>Download Count</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for file in files %}
+        <tr>
+            <td>{{ file.filename }}</td>
+            <td>{{ file.size // 1024 }}</td>
+            <td>{{ file.upload_date.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+            <td>{{ file.download_count }}</td>
+            <td>
+                <a href="{{ url_for('download_file', file_id=file.id) }}">Download</a>
+                <a href="{{ url_for('preview_file', file_id=file.id) }}">Preview</a>
+                <form action="{{ url_for('delete_file', file_id=file.id) }}" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
