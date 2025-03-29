@@ -19,12 +19,12 @@ A lightweight, web-based file manager built with Flask. This application allows 
 ### Home Page
 Displays a list of uploaded files with download links.
 
-![Home Page Screenshot](https://via.placeholder.com/800x400?text=Home+Page)
+![Home Page Screenshot](screenshot1.pg)
 
 ### Upload Page
 Allows users to upload files to the server.
 
-![Upload Page Screenshot](https://via.placeholder.com/800x400?text=Upload+Page)
+![Upload Page Screenshot](screenshot2.png)
 
 ---
 
