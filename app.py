@@ -5,6 +5,11 @@ app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+# create a if for checking uploads folder 
+
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
+
 @app.route('/')
 def home():
     files = os.listdir(app.config['UPLOAD_FOLDER'])
