@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Activity</title>
+</head>
+<body>
+    <h1>File Activity</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Filename</th>
+                <th>Uploaded By</th>
+                <th>Upload Date</th>
+                <th>Download Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for file in activities %}
+            <tr>
+                <td>{{ file.filename }}</td>
+                <td>{{ file.uploaded_by }}</td>
+                <td>{{ file.upload_date.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                <td>{{ file.download_count }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
