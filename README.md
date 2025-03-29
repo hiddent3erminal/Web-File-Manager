@@ -19,7 +19,7 @@ A lightweight, web-based file manager built with Flask. This application allows 
 ### Home Page
 Displays a list of uploaded files with download links.
 
-![Home Page Screenshot](screenshot1.pg)
+![Home Page Screenshot](screenshot1.png)
 
 ### Upload Page
 Allows users to upload files to the server.
@@ -37,55 +37,77 @@ Allows users to upload files to the server.
 ### Steps
 1. Clone the repository:
    ```bash
-   git https://github.com/hiddent3erminal/Web-File-Manager.git
+   git clone https://github.com/hiddent3erminal/Web-File-Manager.git
    cd Web-File-Manager
+   ```
 
-## INstalation Dependencies:
-    pip install -r requirements.txt
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-##  How to run
-    python3 app.py
-    then open your browser and go to 'http://127.0.0.1:5000'
+3. Run the application:
+   ```bash
+   python3 app.py
+   ```
 
-### Usage:
-#    Uploading Files
-        Navigate to the "Upload" page.
-        Select a file using the file input field.
-        Click the "Upload File" button to upload the file to the server.
-#    Downloading Files
-        On the home page, click on the file name to download it.
-        Project Structure
+4. Open your browser and go to `http://127.0.0.1:5000`.
 
-### project structure 
-    Web-File-Manager/
-├── [app.py](http://_vscodecontentref_/1)                 # Main Flask application
-├── [requirements.txt](http://_vscodecontentref_/2)       # Python dependencies
+---
+
+## Usage
+
+### Uploading Files
+1. Navigate to the "Upload" page.
+2. Select a file using the file input field.
+3. Click the "Upload File" button to upload the file to the server.
+
+### Downloading Files
+1. On the home page, click on the file name to download it.
+
+---
+
+## Project Structure
+
+```
+Web-File-Manager/
+├── app.py                 # Main Flask application
+├── requirements.txt       # Python dependencies
 ├── templates/             # HTML templates
 │   ├── base.html          # Base layout for all pages
 │   ├── index.html         # Home page template
 │   ├── upload.html        # Upload page template
 │   └── 404.html           # Custom 404 error page
 ├── uploads/               # Directory for uploaded files (created at runtime)
-├── [README.md](http://_vscodecontentref_/3)              # Project documentation
+├── README.md              # Project documentation
 └── LICENSE                # License file
+```
 
-### Limitations
-    The application is designed for local use and is not production-ready.
-    File size is limited to 16MB by default (can be configured in app.py).
+---
 
-# Future Improvements
-    Add user authentication for secure file access.
-    Implement file deletion functionality.
-    Enhance the UI with a modern CSS framework (e.g., Bootstrap or Tailwind CSS).
-    Add support for file previews (e.g., images, PDFs).
-    Add logging for better monitoring and debugging.
+## Limitations
+- The application is designed for local use and is not production-ready.
+- File size is limited to 16MB by default (can be configured in `app.py`).
 
-# License
-    This project is licensed under the MIT License.
+---
 
-# Contributing
-    Contributions are welcome! Please follow these steps:
-    Fork the repository.
-    Create a new branch for your feature or bug fix.
-    Commit your changes and push them to your fork.
-    Submit a pull request.
+## Future Improvements
+- Add user authentication for secure file access.
+- Implement file deletion functionality.
+- Enhance the UI with a modern CSS framework (e.g., Bootstrap or Tailwind CSS).
+- Add support for file previews (e.g., images, PDFs).
+- Add logging for better monitoring and debugging.
+
+---
+
+## License
+This project is licensed under the MIT License.
+
+---
+
+## Contributing
+Contributions are welcome! Please follow these steps:
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Commit your changes and push them to your fork.
+4. Submit a pull request.

@@ -1,4 +1,5 @@
 import os
+import io
 import pytest
 from app import app
 
